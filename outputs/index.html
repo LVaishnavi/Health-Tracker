@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10231f" />
+  <title>VitaTrack — Daily Health Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top" aria-label="VitaTrack home">
+        <span class="brand-mark">V</span>
+        <span>VitaTrack</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a class="nav-link active" href="#dashboard"><span>⌂</span> Dashboard</a>
+        <a class="nav-link" href="#exercise"><span>↗</span> Exercise</a>
+        <a class="nav-link" href="#nutrition"><span>◇</span> Nutrition</a>
+        <a class="nav-link" href="#sleep"><span>☾</span> Sleep</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="spark">✦</span>
+        <strong>Small steps, big change.</strong>
+        <p>Consistency matters more than perfection.</p>
+      </div>
+
+      <div class="profile-mini">
+        <div class="avatar">U</div>
+        <div><strong>My Health</strong><span>Daily journey</span></div>
+      </div>
+    </aside>
+
+    <main id="top">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+        <div>
+          <p class="eyebrow" id="todayLabel">TODAY</p>
+          <h1>Good day, <span>let's feel better.</span></h1>
+        </div>
+        <div class="weight-control">
+          <label for="weight">BODY WEIGHT</label>
+          <div><input id="weight" type="number" min="30" max="250" value="65" /><span>kg</span></div>
+        </div>
+      </header>
+
+      <section class="hero" id="dashboard">
+        <div>
+          <p class="eyebrow pale">YOUR DAILY BALANCE</p>
+          <h2>One day. Three pillars.<br><em>A healthier you.</em></h2>
+          <p>Track your movement, nourishment, and rest. VitaTrack turns the little things you do today into a clearer picture of your wellbeing.</p>
+        </div>
+        <div class="balance-ring" aria-label="Daily balance score">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52" />
+            <circle class="ring-progress" id="scoreRing" cx="60" cy="60" r="52" />
+          </svg>
+          <div><strong id="scoreValue">0</strong><span>/ 100</span><small>DAILY SCORE</small></div>
+        </div>
+        <div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+      </section>
+
+      <section class="summary-grid" aria-label="Daily summary">
+        <article class="summary-card movement">
+          <div class="summary-icon">↗</div>
+          <div><span>CALORIES BURNED</span><strong id="burnedSummary">0 <small>kcal</small></strong><p id="exerciseSummary">Add your first exercise</p></div>
+        </article>
+        <article class="summary-card nutrition">
+          <div class="summary-icon">◇</div>
+          <div><span>CALORIES EATEN</span><strong id="foodSummary">0 <small>kcal</small></strong><p id="mealSummary">Add your first meal</p></div>
+        </article>
+        <article class="summary-card rest">
+          <div class="summary-icon">☾</div>
+          <div><span>SLEEP LAST NIGHT</span><strong id="sleepSummary">0 <small>hrs</small></strong><p id="sleepStatus">Log your sleep</p></div>
+        </article>
+      </section>
+
+      <section class="tracker-grid">
+        <article class="tracker-card" id="exercise">
+          <div class="card-heading">
+            <div class="title-icon coral">↗</div>
+            <div><p class="eyebrow">MOVEMENT</p><h3>Exercise tracker</h3></div>
+          </div>
+          <p class="card-copy">Choose an activity and duration. We’ll estimate calories using your body weight.</p>
+          <form id="exerciseForm">
+            <label for="exerciseType">Type of exercise</label>
+            <select id="exerciseType">
+              <option value="walking">Walking</option><option value="running">Running</option>
+              <option value="cycling">Cycling</option><option value="swimming">Swimming</option>
+              <option value="yoga">Yoga</option><option value="strength">Strength training</option>
+              <option value="dancing">Dancing</option><option value="badminton">Badminton</option>
+            </select>
+            <label for="exerciseMinutes">Time spent</label>
+            <div class="input-suffix"><input id="exerciseMinutes" type="number" min="1" max="600" value="30" required /><span>minutes</span></div>
+            <button type="submit" class="primary coral-button">Calculate & add</button>
+          </form>
+          <div class="result-box coral-result" id="exerciseResult" aria-live="polite">
+            <span>ESTIMATED BURN</span><strong>— <small>kcal</small></strong>
+          </div>
+        </article>
+
+        <article class="tracker-card" id="nutrition">
+          <div class="card-heading">
+            <div class="title-icon gold">◇</div>
+            <div><p class="eyebrow">NOURISHMENT</p><h3>Food tracker</h3></div>
+          </div>
+          <p class="card-copy">Select a food and portion. We’ll estimate its energy for your daily total.</p>
+          <form id="foodForm">
+            <label for="foodType">Food or meal</label>
+            <select id="foodType">
+              <option value="idli">Idli (2 pieces)</option><option value="dosa">Plain dosa (1)</option>
+              <option value="rice">Cooked rice (1 cup)</option><option value="dal">Dal (1 cup)</option>
+              <option value="roti">Roti (1)</option><option value="biryani">Vegetable biryani (1 cup)</option>
+              <option value="banana">Banana (1 medium)</option><option value="apple">Apple (1 medium)</option>
+              <option value="egg">Boiled egg (1)</option><option value="salad">Mixed salad (1 bowl)</option>
+              <option value="chicken">Grilled chicken (100 g)</option><option value="milk">Milk (1 glass)</option>
+            </select>
+            <label for="servings">Number of servings</label>
+            <div class="input-suffix"><input id="servings" type="number" min="0.25" max="20" step="0.25" value="1" required /><span>servings</span></div>
+            <button type="submit" class="primary gold-button">Calculate & add</button>
+          </form>
+          <div class="result-box gold-result" id="foodResult" aria-live="polite">
+            <span>ESTIMATED ENERGY</span><strong>— <small>kcal</small></strong>
+          </div>
+        </article>
+
+        <article class="tracker-card" id="sleep">
+          <div class="card-heading">
+            <div class="title-icon blue">☾</div>
+            <div><p class="eyebrow">REST & RECOVERY</p><h3>Sleep tracker</h3></div>
+          </div>
+          <p class="card-copy">Tell us when you slept. Good rest is the quiet foundation of good health.</p>
+          <form id="sleepForm">
+            <div class="time-row">
+              <div><label for="bedtime">Bedtime</label><input id="bedtime" type="time" value="23:00" required /></div>
+              <div><label for="wakeTime">Wake up</label><input id="wakeTime" type="time" value="07:00" required /></div>
+            </div>
+            <button type="submit" class="primary blue-button">Calculate sleep</button>
+          </form>
+          <div class="result-box blue-result" id="sleepResult" aria-live="polite">
+            <span>TOTAL REST</span><strong>— <small>hours</small></strong>
+          </div>
+        </article>
+      </section>
+
+      <section class="insight-section">
+        <div class="insight-heading">
+          <div><p class="eyebrow">✦ PERSONALIZED FOR YOU</p><h2>Your health insight</h2></div>
+          <span class="live-badge"><i></i> Updates as you track</span>
+        </div>
+        <div class="insight-panel">
+          <div class="coach-icon">✦</div>
+          <div><h3 id="insightTitle">Ready when you are</h3><p id="insightText">Log your exercise, food, and sleep to receive a simple, personalized suggestion for your day.</p></div>
+        </div>
+        <div class="tips-grid" id="tipsGrid"></div>
+        <p class="disclaimer">VitaTrack provides general wellness estimates, not medical advice. Calorie values vary by body, intensity, recipe, and portion size.</p>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

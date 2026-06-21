@@ -1,0 +1,23 @@
+{
+  "name": "health-tracker",
+  "version": "1.0.0",
+  "description": "verifying git set-up",
+  "homepage": "https://github.com/LVaishnavi/Health-Tracker#readme",
+  "bugs": {
+    "url": "https://github.com/LVaishnavi/Health-Tracker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LVaishnavi/Health-Tracker.git"
+  },
+  "license": "ISC",
+  "author": "Vaishnavi",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
