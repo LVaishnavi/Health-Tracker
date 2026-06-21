@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#10231f" />
-  <title>HealthTrack — Daily Health Companion</title>
+  <title>VitaTrack — Daily Health Companion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
   <div class="app-shell">
     <aside class="sidebar">
       <a class="brand" href="#top" aria-label="VitaTrack home">
-        <span class="brand-mark">H</span>
-        <span>HealthTrack</span>
+        <span class="brand-mark">V</span>
+        <span>VitaTrack</span>
       </a>
 
       <nav aria-label="Main navigation">
@@ -32,7 +32,7 @@
       </div>
 
       <div class="profile-mini">
-        <div class="avatar">H</div>
+        <div class="avatar">U</div>
         <div><strong>My Health</strong><span>Daily journey</span></div>
       </div>
     </aside>
@@ -54,7 +54,7 @@
         <div>
           <p class="eyebrow pale">YOUR DAILY BALANCE</p>
           <h2>One day. Three pillars.<br><em>A healthier you.</em></h2>
-          <p>Track your movement, nourishment, and rest. HealthTrack turns the little things you do today into a clearer picture of your wellbeing.</p>
+          <p>Track your movement, nourishment, and rest. VitaTrack turns the little things you do today into a clearer picture of your wellbeing.</p>
         </div>
         <div class="balance-ring" aria-label="Daily balance score">
           <svg viewBox="0 0 120 120">
@@ -149,6 +149,17 @@
         </article>
       </section>
 
+      <section class="activity-section" aria-labelledby="activityTitle">
+        <div class="activity-heading">
+          <div>
+            <p class="eyebrow">TODAY'S ACTIVITY</p>
+            <h2 id="activityTitle">Your entries</h2>
+          </div>
+          <button class="reset-button" id="resetDay" type="button">Reset today</button>
+        </div>
+        <div class="activity-list" id="activityList" aria-live="polite"></div>
+      </section>
+
       <section class="insight-section">
         <div class="insight-heading">
           <div><p class="eyebrow">✦ PERSONALIZED FOR YOU</p><h2>Your health insight</h2></div>
@@ -159,7 +170,7 @@
           <div><h3 id="insightTitle">Ready when you are</h3><p id="insightText">Log your exercise, food, and sleep to receive a simple, personalized suggestion for your day.</p></div>
         </div>
         <div class="tips-grid" id="tipsGrid"></div>
-        <p class="disclaimer">HealthTrack provides general wellness estimates, not medical advice. Calorie values vary by body, intensity, recipe, and portion size.</p>
+        <p class="disclaimer">VitaTrack provides general wellness estimates, not medical advice. Calorie values vary by body, intensity, recipe, and portion size.</p>
       </section>
     </main>
   </div>
